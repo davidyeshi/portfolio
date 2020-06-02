@@ -4,8 +4,10 @@
     flex-direction: column;
     background-color: #f9f7f1;
     width:100%;
-    height: 100%;
+    height: 100vh;
     font-family: 'Droid Serif',serif;
+    overflow: scroll;
+
 }
 
 .Layout nav {
@@ -24,7 +26,7 @@
 .Outline {
     /* border: 1px solid black; */
     width: 90vw;
-    height: 140vh;
+    height: 100%;
     text-align: left;
     font-size: small;
 }
@@ -33,7 +35,6 @@
 @media (min-width: 500px) {
     .Outline {
         width: 70vw;
-        height: 80vw;
         font-size: large;
     }
     .Layout nav {

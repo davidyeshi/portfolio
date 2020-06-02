@@ -3,10 +3,10 @@ import {Card, Button, Modal} from 'react-bootstrap';
 import Radium from 'radium';
 
 const style = {
-    'width': '10rem',
+    'width': '8rem',
     'textAlign': 'center',
-    '@media (min-width: 500px)': {
-        'width': '15rem'
+    '@media (min-width: 600px)': {
+        'width': '13rem'
     },
     'margin':'5px'
 };

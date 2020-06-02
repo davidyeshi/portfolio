@@ -32,7 +32,7 @@
 }
 
 /* For Desktop */
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .Outline {
         width: 70vw;
         font-size: large;

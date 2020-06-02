@@ -6,7 +6,7 @@ const style = {
     'width': '8rem',
     'textAlign': 'center',
     '@media (min-width: 600px)': {
-        'width': '13rem'
+        'width': '15rem'
     },
     'margin':'5px'
 };
@@ -23,7 +23,7 @@ class Project extends Component {
     render() {
         return(
             <div style={style}>
-                <Card >
+                <Card bg='light'>
                     <Card.Img variant="top" src={this.props.projectImage}/>
                     <Card.Header><Button variant="dark" onClick={this.showModal}>View</Button></Card.Header>
                     <Modal 

@@ -33,10 +33,12 @@
 /* For Desktop */
 @media (min-width: 500px) {
     .Outline {
+        width: 70vw;
         height: 80vw;
         font-size: large;
     }
     .Layout nav {
+        justify-content: left;
         font-size:medium;
     }
 }

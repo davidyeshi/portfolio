@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import classes from './Layout.module.css';
 import Header from '../../components/Navigation/Header/Header';
-import About from '../../components/About/About';
+import Profile from '../../components/Profile/Profile';
 
 class Layout extends Component {
 
@@ -13,7 +13,7 @@ class Layout extends Component {
                     <div className={classes.Subhead}>
                         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
                             <Tab eventKey="profile" title="Profile">
-                            <div className={classes.Outline}><About /></div>
+                            <div className={classes.Outline}><Profile /></div>
                             </Tab>
                             <Tab eventKey="projects" title="Projects">
                             <div className={classes.Outline}>Projects</div>

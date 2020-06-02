@@ -13,14 +13,12 @@
     justify-content: center;
     font-size: small;
     text-transform: capitalize;
+    border-bottom: 1px solid #b4b4b4;
+
 }
 
 .Layout a {
     color: black;
-}
-
-.nav-tabs .nav-link{
-    color: red;
 }
 
 .Outline {
@@ -31,11 +29,7 @@
     text-align: left;
     font-size: small;
 }
-.Subhead{
-    border-top: 2px solid #b4b4b4;
-    padding: 12px 0 12px 0;
 
-}
 /* For Desktop */
 @media (min-width: 500px) {
     .Outline {
@@ -43,8 +37,6 @@
         font-size: large;
     }
     .Layout nav {
-        width: 95%;
-        justify-content: center;
         font-size:medium;
     }
 }

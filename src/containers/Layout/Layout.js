@@ -10,18 +10,21 @@ class Layout extends Component {
        return(
            <div className = {classes.Layout}>
                     <Header/>
-                    <div>
-                    <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-                        <Tab eventKey="home" title="Home">
-                        <div className={classes.Outline}><About /></div>
-                        </Tab>
-                        <Tab eventKey="profile" title="Profile">
-                        <div className={classes.Outline}>Profile</div>
-                        </Tab>
-                        <Tab eventKey="contact" title="Contact">
-                        <div className={classes.Outline}>Contact</div>
-                        </Tab>
-                    </Tabs>
+                    <div className={classes.Subhead}>
+                        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+                            <Tab eventKey="profile" title="Profile">
+                            <div className={classes.Outline}><About /></div>
+                            </Tab>
+                            <Tab eventKey="projects" title="Projects">
+                            <div className={classes.Outline}>Projects</div>
+                            </Tab>
+                            <Tab eventKey="experience" title="Experience">
+                            <div className={classes.Outline}>Experience</div>
+                            </Tab>
+                            <Tab eventKey="contact" title="Contact">
+                            <div className={classes.Outline}>Contact</div>
+                            </Tab>
+                        </Tabs>
                     </div>
            </div>
        );

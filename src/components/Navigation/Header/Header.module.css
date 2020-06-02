@@ -4,12 +4,12 @@
     top: 0;
     left: 0;
     position: relative;
-    background-color: white;
     color: black;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     z-index: 90;
+    font-family: 'Playfair Display', serif;
 }
 
 .MyPicture {

@@ -1,39 +1,50 @@
 .Layout {
     display: flex;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: #f9f7f1;
     width:100%;
     height: 100%;
+    font-family: 'Droid Serif',serif;
 }
 
 .Layout nav {
     width: 95%;
     justify-content: center;
     font-size: small;
+    text-transform: capitalize;
 }
 
-.Layout nav.link {
+.Layout a {
+    color: black;
+}
+
+.nav-tabs .nav-link{
     color: red;
 }
 
 .Outline {
     /* border: 1px solid black; */
     width: 90vw;
-    height: 140vw;
+    height: 140vh;
     margin: 10px;
-    background-color: #eee;
     text-align: left;
     font-size: small;
 }
+.Subhead{
+    border-top: 2px solid #b4b4b4;
+    padding: 12px 0 12px 0;
 
+}
 /* For Desktop */
 @media (min-width: 500px) {
     .Outline {
-        height: 40vw;
+        height: 80vw;
         font-size: large;
+    }
+    .Layout nav {
+        width: 95%;
+        justify-content: center;
+        font-size:medium;
     }
 }

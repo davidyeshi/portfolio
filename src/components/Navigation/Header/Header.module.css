@@ -1,0 +1,38 @@
+.Header {
+    height: auto;
+    width: 50%;
+    top: 0;
+    left: 0;
+    position: relative;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.MyPicture {
+    height: 80%;
+}
+
+.Title {
+    font-weight: bold;
+    font-size: x-large;
+    margin: 10px;
+}
+
+.Details {
+    margin-bottom: 5px;
+    font-size: medium;
+}
+
+@media(max-width: 500px) {
+    .Title {
+        font-size: large;
+    }
+
+    .Details {
+        font-size: medium;
+    }
+}

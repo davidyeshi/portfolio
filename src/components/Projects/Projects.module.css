@@ -1,7 +1,7 @@
 .Projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content:left;
+    justify-content:center;
     width: 90%;
     height: auto;
     align-items: center;

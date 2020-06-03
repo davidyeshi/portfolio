@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Project from './Project/Project';
 import classes from './Projects.module.css';
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal, Form, Spinner} from 'react-bootstrap';
 import axios from '../../axios-portfolio';
 
 class Projects extends Component {
@@ -87,15 +87,19 @@ class Projects extends Component {
     }
 
     render () {
-        let displayProject = this.state.projects.map((project, index) => (
-                <Project 
-                    key={project.id} 
-                    eventKey={index} 
-                    projectImage={project.projectImg}
-                    title={project.title}
-                    desc={project.desc}
-                    link={project.website}/>
-            ))
+        let displayProject = <Spinner animation="border" size="xl"/>
+
+        if (this.state.projects.length > 0) {
+            displayProject = this.state.projects.map((project, index) => (
+                    <Project 
+                        key={project.id} 
+                        eventKey={index} 
+                        projectImage={project.projectImg}
+                        title={project.title}
+                        desc={project.desc}
+                        link={project.website}/>
+                ))
+        }
 
         return (
             <React.Fragment>
@@ -103,6 +107,7 @@ class Projects extends Component {
                 {displayProject}
             </div>
             <div style={{textAlign:'center'}}>
+            <br />
             <Button variant="secondary" onClick={this.showModal}>Add New Project</Button>
             <Modal 
                 show={this.state.show} 

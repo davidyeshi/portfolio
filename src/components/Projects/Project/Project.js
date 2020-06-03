@@ -24,7 +24,7 @@ class Project extends Component {
         return(
             <div style={style}>
                 <Card bg='light'>
-                    <Card.Img variant="top" src={this.props.projectImage}/>
+                    <Card.Img style={{width:'238px', height: '238px', objectFit: 'fill'}}variant="top" src={this.props.projectImage}/>
                     <Card.Header><Button variant="dark" onClick={this.showModal}>View</Button></Card.Header>
                     <Modal 
                         show={this.state.show} 

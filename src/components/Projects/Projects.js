@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import imgPro from '../../yeshi-5.jpg';
 import Project from './Project/Project';
 import classes from './Projects.module.css';
 import { Button, Modal, Form } from 'react-bootstrap';
@@ -17,7 +16,8 @@ class Projects extends Component {
     }
     state = {
         show: false,
-        imgRead: false
+        imgRead: false,
+        projects: []
     }
 
     showModal = () => this.setState({show:true});
@@ -44,7 +44,8 @@ class Projects extends Component {
         this.getBase64(imagePath, (result) => {
             console.log('Result: '+result)
             projectImageBase64 = result;
-            console.log('base64: ' + projectImageBase64);
+            this.setState({imgRead: true});
+            console.log(this.state.imgRead);
 
             const formData = {
                 title: this.TitleInput.current.value,
@@ -59,6 +60,7 @@ class Projects extends Component {
                 .then(res=>{
                     this.closeModal();
                     console.log(res);
+                    window.location.reload();
                 })
                 .catch(err => {
                     console.log(err);
@@ -67,11 +69,38 @@ class Projects extends Component {
         });
     }
 
+    componentDidMount() {
+        axios.get('/projects.json')
+            .then(res => {
+                const fetchedProjects = [];
+
+                for (let key in res.data) {
+                    fetchedProjects.push({...res.data[key], id: key});
+                }
+
+                this.setState({projects: fetchedProjects})
+                console.log(this.state.projects)
+            })
+            .catch(err => {
+                alert('Something went wrong while connecting to server, please try again later');
+            })
+    }
+
     render () {
+        let displayProject = this.state.projects.map((project, index) => (
+                <Project 
+                    key={project.id} 
+                    eventKey={index} 
+                    projectImage={project.projectImg}
+                    title={project.title}
+                    desc={project.desc}
+                    link={project.website}/>
+            ))
+
         return (
             <React.Fragment>
             <div className={classes.Projects}>
-                <Project projectImage={imgPro} eventKey="0" title="Some title" desc = "Project DescriptionProject DescriptionProject DescriptionProject DescriptionProject DescriptionProject DescriptionProject DescriptionProject DescriptionProject DescriptionProject DescriptionProject Description" link="Project link"  />
+                {displayProject}
             </div>
             <div style={{textAlign:'center'}}>
             <Button variant="secondary" onClick={this.showModal}>Add New Project</Button>

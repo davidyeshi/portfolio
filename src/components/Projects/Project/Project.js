@@ -21,10 +21,22 @@ class Project extends Component {
     closeModal = () => this.setState({show:false});
 
     render() {
+        let imgStyle={
+            width: '238px',
+            height: '238px',
+            objectFit: 'cover'
+        }
+
+        const width = window.innerWidth;
+        if (width<600) {
+            imgStyle = {
+                width: '126px', height: '126px',objectFit: 'cover'
+            }
+        }
         return(
             <div style={style}>
                 <Card bg='light'>
-                    <Card.Img style={{width:'238px', height: '238px', objectFit: 'fill'}}variant="top" src={this.props.projectImage}/>
+                    <Card.Img style={imgStyle} variant="top" src={this.props.projectImage}/>
                     <Card.Header><Button variant="dark" onClick={this.showModal}>View</Button></Card.Header>
                     <Modal 
                         show={this.state.show} 

@@ -73,11 +73,11 @@ class Projects extends Component {
         axios.get('/projects.json')
             .then(res => {
                 const fetchedProjects = [];
-
+                console.log(res);
                 for (let key in res.data) {
                     fetchedProjects.push({...res.data[key], id: key});
                 }
-
+                
                 this.setState({projects: fetchedProjects})
                 console.log(this.state.projects)
             })

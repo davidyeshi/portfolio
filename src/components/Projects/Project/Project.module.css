@@ -1,0 +1,11 @@
+.Project {
+    width: '8rem';
+    text-align: 'center';
+    margin:'5px';
+}
+
+@media (min-width: 600px) {
+    .Project {
+        width: '15rem'
+    }
+}    
